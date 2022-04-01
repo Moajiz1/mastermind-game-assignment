@@ -1,0 +1,310 @@
+/* *{
+  margin: 0;
+  padding: 0;
+  font-family: 'Cabin', sans-serif;
+} */
+*{
+  margin: 0;
+  padding: 0;
+}
+@import url('https://fonts.googleapis.com/css?family=Cabin');
+
+
+/* html {
+  box-sizing: border-box;
+  background-color: #bab3b6;
+  font-family: 'Cabin', sans-serif;
+} */
+
+#root {  
+  text-align: center;
+}
+
+#root h2 {
+  font-size: 2em;
+  margin: 0.67em 0 0.15em 0;  
+}
+
+.rules {
+  margin: 0.33em auto 0.8em auto;
+  max-width: 450px;
+}
+
+.rules h3 {
+  font-size: 1.05em;
+  margin: 5px 0 0 0;
+  color: #333;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.rules p {
+  text-align: justify;
+  -moz-text-align-last: center;
+  text-align-last: center;
+  margin: 5px 1em;
+  font-size: 0.92em;
+  color: #666;
+}
+
+.colors .color-holder, .board .peg {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #777;
+  margin-right: 8px;
+  border-radius: 21px;
+  cursor: pointer;
+  background-color: #F0EAED;
+} 
+
+.colors .yellow, .circles .yellow {
+  background-color: #FFB400;
+}
+
+.colors .red, .circles .red {
+  background-color: #FF5A5F;
+}
+
+.colors .green, .circles .green {
+  background-color: #8CE071;
+}
+
+.colors .blue, .circles .blue {
+  background-color: #36BEDD;
+}
+
+.colors .purple, .circles .purple {
+  background-color: #9F66DF;
+}
+
+.colors .active {
+  border: 2px solid black;
+  border-radius: 21px;
+}
+
+.board {
+  margin-top: 15px;  
+}
+
+.board div {
+  display: inline-block;
+  margin-right: 5px;
+  vertical-align: bottom;
+}
+
+.board .circles {
+  margin: 10px;
+}
+
+.board .ok-button {    
+  left: 6px;
+  width: 10px;
+  height: 17px;
+  border-width: 0 5px 5px 0;
+  top: -30px;
+  border-style: solid;
+  border-color: #B4BB69;
+  margin-top: -11px;
+  transform: rotate(
+45deg
+);
+  content: "";
+  position: relative;
+  background: none;
+}
+
+.cross::before, .cross::after {
+  position: absolute;
+    left: 7px;
+    top: 4px;
+    content: ' ';
+    height: 9px;
+    width: 2px;
+    background-color: #333;
+}
+
+.cross::before{
+transform: rotate(
+45deg
+);
+}
+
+.cross::after{
+transform: rotate(
+-45deg
+);
+}
+
+.board .ok-button.disabled {
+  display: none;
+}
+
+.board .ok-button.hidden {
+  /* display: none; */
+  cursor: default;
+}
+
+.board .row {
+  display: block;
+  border: 1px solid #D0CACD;
+  margin: 0 auto 3px auto;
+  max-width: 360px;
+  /* opacity: calc(12px); */
+}
+
+.board .row.active {
+  border:2px solid #BBAAAA;
+  background-color: #FFF9FC;
+}
+
+.board .hints {
+  width: 20%;
+  margin: 14px 10px;
+} 
+
+.board .hints span {
+  display: inline-block;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  border: 1px solid #15101a;
+  border-radius: 50%;
+  left: 4px;
+  top: 3px;
+}
+
+.board .hints span.exact {
+  background-color: #000000;  
+}
+
+.board .hints span.partial {
+  background-color: #ffffff;  
+}
+
+.solution p {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+.solution .color-holder {
+  cursor: default;
+}
+
+.solution a {
+  color: #338855;
+  font-size: 1.1em;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.msg {
+  margin: 0.5em auto;
+}
+
+.mastermind-heading{
+  font-size: 2.6rem;
+}
+.MIND {
+  color: #333333;
+  }
+.mastermind-heading{
+  color: white;
+}
+.M{
+  background: #FFB400;
+}
+.A{
+  background: #FF5A5F;
+}
+.S{
+  background-color: #8CE071; 
+}
+.T{
+  background-color: #00D1C1;
+}
+.E{
+  background-color: #007A87;
+}
+.R{
+  background-color: #9F66DF;
+}
+
+.endgame {
+	position:absolute;
+	top:0;
+	left:0;
+	width: 100%;
+	z-index:1;
+	height: 100%;
+}
+
+.success {
+	background-color: #00C653;
+}
+
+.failure {
+	background-color: #DB4445;
+}
+
+.endgame-relative {
+	position: relative;
+	left: 38%;
+	/* top: -650px; */
+	/* margin-left: 470px; */
+  margin-top: 200px;
+	padding: 20px;
+	width: 300px;
+	z-index: 3;
+	-webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.endgame-header {
+	font-family: 'Cinzel', serif;
+	font-size: 30px;
+}
+
+.endgame-btn-container {
+	text-align: center;
+}
+
+.endgame-btn {
+	outline: none;
+	height: 40px;
+	text-align: center;
+	width: 130px;
+	margin-top: 20px;
+	border-radius: 40px;
+	background: #FFFFFF;
+	border: 2px solid #000000;
+	color: black;
+	letter-spacing: 1px;
+	cursor: pointer;
+	transition: all 0.25s ease;
+}
+
+.endgame-btn:hover {
+	color: #FFFFFF;
+	background: #000000;
+}
+
+.endgame-overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	background-color: #000000;
+	opacity: 0.3;
+	z-index: 2;
+	top: 0;
+	left: 0;
+}
